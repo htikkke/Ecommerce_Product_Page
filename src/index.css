@@ -3,4 +3,14 @@
 
 @theme {
   --font-custom-sans: "Kumbh Sans", sans-serif;
+  /* Primary-colors */
+  --color-custom-orange: hsl(26, 100%, 55%);
+  --color-custom-pale-orange: hsl(25, 100%, 94%);
+  /* Neutral-colors */
+  --color-very-dark-blue: hsl(220, 13%, 13%);
+  --color-dark-grayish-blue: hsl(219, 9%, 45%);
+  --color-grayish-blue: hsl(220, 14%, 75%);
+  --color-light-grayish-blue: hsl(223, 64%, 98%);
+  --color-custom-white: hsl(0, 0%, 100%);
+  --color-custom-black: : hsl(0, 0%, 0%);
 }
