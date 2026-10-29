@@ -3,19 +3,41 @@ import profile from "../assets/images/image-avatar.png";
 
 export default function Nav() {
   return (
-    <section id="nav-bar">
-      <h1>sneakers</h1>
-      <ul>
-        <li>Collections</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-      <div>
-        <img src={cartIcon} />
-        <img src={profile} />
+    <nav
+      id="nav-bar"
+      className="flex items-center justify-between px-6 py-8 border-b border-grayish-blue
+       max-w-6xl mx-auto"
+    >
+      <div className="flex items-center gap-14">
+        <h1 className="font-bold font-sans text-3xl text-black tracking-tight">
+          sneakers
+        </h1>
+        <ul className="flex items-center gap-8">
+          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
+            Collections
+          </li>
+          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
+            Men
+          </li>
+          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
+            Women
+          </li>
+          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
+            About
+          </li>
+          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
+            Contact
+          </li>
+        </ul>
       </div>
-    </section>
+      <div className="flex items-center gap-10">
+        <img src={cartIcon} className="cursor-pointer" alt="cart" />
+        <img
+          src={profile}
+          className="w-12 h-12 rounded-full cursor-pointer"
+          alt="Profile"
+        />
+      </div>
+    </nav>
   );
 }
