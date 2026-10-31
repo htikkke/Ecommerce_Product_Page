@@ -2,8 +2,10 @@ import product1 from "../assets/images/image-product-1.jpg";
 import product2 from "../assets/images/image-product-2.jpg";
 import product3 from "../assets/images/image-product-3.jpg";
 import product4 from "../assets/images/image-product-4.jpg";
+import { useState } from "react";
 
 export default function ImageContainer() {
+  const [selectedProduct, setSelectedProduct] = useState(product1);
   return (
     <div id="image-container" className="px-6">
       {/* Main-Large-Image */}
