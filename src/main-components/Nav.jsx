@@ -5,7 +5,7 @@ export default function Nav() {
   return (
     <nav
       id="nav-bar"
-      className="flex items-center justify-between px-6 py-8 border-b border-grayish-blue
+      className="flex items-center justify-between py-8 border-b border-grayish-blue
        max-w-6xl mx-auto"
     >
       <div className="flex items-center gap-14">
