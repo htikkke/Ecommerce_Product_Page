@@ -34,7 +34,7 @@ export default function Nav() {
         <img src={cartIcon} className="cursor-pointer" alt="cart" />
         <img
           src={profile}
-          className="w-12 h-12 rounded-full cursor-pointer"
+          className="w-12 h-12 rounded-full cursor-pointer border-2 border-transparent hover:border-custom-orange transition-all"
           alt="Profile"
         />
       </div>
