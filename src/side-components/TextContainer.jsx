@@ -2,39 +2,52 @@ import cartIcon from "../assets/images/icon-cart.svg";
 
 export default function TextContainer() {
   return (
-    <div id="text-container">
+    <div id="text-container" className="px-6 font-sans">
       {/* Company Name */}
-      <p>Sneaker Company</p>
+      <p className="text-dark-grayish-blue uppercase font-bold text-xs tracking-[2px]">
+        Sneaker Company
+      </p>
       {/* Product Title */}
-      <div>
-        <h1>Fall Limited Edition</h1>
-        <h1>Sneakers</h1>
-      </div>
+      <h1 className="font-bold text-4xl leading-none text-very-dark-blue mt-4">
+        Fall Limited Edition
+        <br />
+        Sneakers
+      </h1>
       {/* Description */}
-      <p>
+      <p className="text-dark-grayish-blue font-semibold mt-6 text-[15px] leading-relaxed">
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
       </p>
       {/* Pricing Section */}
-      <div>
-        <div>
-          <p>$125.00</p>
-          <p>50%</p>
+      <div className="mt-6 flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <p className="font-bold text-2xl text-very-dark-blue">$125.00</p>
+          <span className="px-2 py-0.5 bg-black rounded-md text-white font-bold text-sm">
+            50%
+          </span>
         </div>
-        <p>$250.00</p>
+        <p className="text-sm line-through text-dark-grayish-blue font-bold">
+          $250.00
+        </p>
       </div>
-      {/* Quantity Selector */}
-      <div>
-        <button>-</button>
-        <p>0</p>
-        <button>+</button>
+      <div className="flex items-center gap-8 mt-4">
+        {/* Quantity Selector */}
+        <div className="flex items-center gap-12  px-4 py-3 bg-light-grayish-blue rounded-xl">
+          <button className="text-custom-orange font-bold text-xl cursor-pointer">
+            -
+          </button>
+          <p className="font-bold text-very-dark-blue">0</p>
+          <button className="text-custom-orange font-bold text-xl cursor-pointer">
+            +
+          </button>
+        </div>
+        {/* Add to Cart Button */}
+        <button className="flex items-center justify-center gap-4  px-16 py-4 bg-custom-orange rounded-xl cursor-pointer">
+          <img src={cartIcon} alt="Cart Icon" className="brightness-0" />
+          <span className="font-bold">Add to cart</span>
+        </button>
       </div>
-      {/* Add to Cart Button */}
-      <button>
-        <img src={cartIcon} alt="Cart Icon" />
-        <span>Add to cart</span>
-      </button>
     </div>
   );
 }
