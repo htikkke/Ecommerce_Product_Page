@@ -1,6 +1,9 @@
 import cartIcon from "../assets/images/icon-cart.svg";
+import { useState } from "react";
 
 export default function TextContainer() {
+  const [count, setCount] = useState(0);
+
   return (
     <div id="text-container" className="px-6 font-sans">
       {/* Company Name */}
@@ -34,11 +37,17 @@ export default function TextContainer() {
       <div className="flex items-center gap-8 mt-4">
         {/* Quantity Selector */}
         <div className="flex items-center gap-12  px-4 py-3 bg-light-grayish-blue rounded-xl">
-          <button className="text-custom-orange font-bold text-4xl cursor-pointer hover:opacity-50">
+          <button
+            onClick={() => setCount((prev) => Math.max(0, prev - 1))}
+            className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50"
+          >
             -
           </button>
-          <p className="font-bold text-very-dark-blue">0</p>
-          <button className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50">
+          <p className="font-bold text-very-dark-blue">{count}</p>
+          <button
+            onClick={() => setCount((prev) => prev + 1)}
+            className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50"
+          >
             +
           </button>
         </div>
