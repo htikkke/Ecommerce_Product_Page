@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Nav from "./main-components/Nav";
 import Hero from "./main-components/Hero";
 
 export default function App() {
+  const [cartItem, setCartItem] = useState(null);
   return (
     <div
       id="main-container"
