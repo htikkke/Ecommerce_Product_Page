@@ -34,11 +34,11 @@ export default function TextContainer() {
       <div className="flex items-center gap-8 mt-4">
         {/* Quantity Selector */}
         <div className="flex items-center gap-12  px-4 py-3 bg-light-grayish-blue rounded-xl">
-          <button className="text-custom-orange font-bold text-xl cursor-pointer">
+          <button className="text-custom-orange font-bold text-4xl cursor-pointer hover:opacity-50">
             -
           </button>
           <p className="font-bold text-very-dark-blue">0</p>
-          <button className="text-custom-orange font-bold text-xl cursor-pointer">
+          <button className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50">
             +
           </button>
         </div>
