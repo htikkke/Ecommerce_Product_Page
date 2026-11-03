@@ -15,6 +15,9 @@ export default function App() {
       image: "/image-product-1-thumbnail.jpg",
     });
   };
+  const handleDeleteCart = () => {
+    setCartItem(null);
+  };
   return (
     <div
       id="main-container"
