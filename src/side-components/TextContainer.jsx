@@ -1,4 +1,6 @@
 import cartIcon from "../assets/images/icon-cart.svg";
+import plusIcon from "../assets/images/icon-plus.svg";
+import minusIcon from "../assets/images/icon-minus.svg";
 import { useState } from "react";
 
 export default function TextContainer() {
@@ -41,14 +43,14 @@ export default function TextContainer() {
             onClick={() => setCount((prev) => Math.max(0, prev - 1))}
             className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50"
           >
-            -
+            <img src={minusIcon} />
           </button>
           <p className="font-bold text-very-dark-blue">{count}</p>
           <button
             onClick={() => setCount((prev) => prev + 1)}
             className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50"
           >
-            +
+            <img src={plusIcon} />
           </button>
         </div>
         {/* Add to Cart Button */}
