@@ -1,5 +1,6 @@
 import Nav from "./main-components/Nav";
 import Hero from "./main-components/Hero";
+import Cart from "./main-components/Cart";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
     >
       <Nav />
       <Hero />
+      <Cart />
     </div>
   );
 }
