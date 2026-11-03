@@ -43,7 +43,10 @@ export default function TextContainer() {
           </button>
         </div>
         {/* Add to Cart Button */}
-        <button className="flex items-center justify-center gap-4  px-16 py-4 bg-custom-orange rounded-xl cursor-pointer">
+        <button
+          className="flex items-center justify-center gap-4  px-16 py-4 bg-custom-orange rounded-xl cursor-pointer
+        hover:bg-custom-orange/75 transition-opacity shadow-xl"
+        >
           <img src={cartIcon} alt="Cart Icon" className="brightness-0" />
           <span className="font-bold">Add to cart</span>
         </button>
