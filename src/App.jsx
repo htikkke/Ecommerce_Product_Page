@@ -23,7 +23,7 @@ export default function App() {
       id="main-container"
       className="w-full min-h-screen bg-white px-20 py-5"
     >
-      <Nav />
+      <Nav cartItem={cartItem} onDeleteCart={handleDeleteCart} />
       <Hero />
     </div>
   );
