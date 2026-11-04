@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import Nav from "./main-components/Nav";
 import Hero from "./main-components/Hero";
 
-const cartContext = createContext();
+export const CartContext = createContext();
 export default function App() {
   const [cartItem, setCartItem] = useState(null);
 
@@ -20,7 +20,7 @@ export default function App() {
     setCartItem(null);
   };
   return (
-    <cartContext.Provider
+    <CartContext.Provider
       value={{ handleAddToCart, handleDeleteCart, cartItem, setCartItem }}
     >
       <div
@@ -30,6 +30,6 @@ export default function App() {
         <Nav />
         <Hero />
       </div>
-    </cartContext.Provider>
+    </CartContext.Provider>
   );
 }

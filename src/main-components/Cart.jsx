@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { CartContext } from "../App";
+
 export default function Cart() {
+  const { cartItem, handleAddToCart } = useContext(CartContext);
   return (
     <div
       id="cart-container"
