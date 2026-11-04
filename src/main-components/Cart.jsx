@@ -3,8 +3,7 @@ import { CartContext } from "../App";
 import deleteIcon from "../assets/images/image-delete.png";
 
 export default function Cart() {
-  const { cartItem, handleAddToCart, handleDeleteCart } =
-    useContext(CartContext);
+  const { cartItem, handleDeleteCart } = useContext(CartContext);
   return (
     <div
       id="cart-container"
@@ -33,7 +32,10 @@ export default function Cart() {
                   </strong>
                 </p>
               </div>
-              <button className="hover:opacity-75 transition-opacity">
+              <button
+                onClick={handleDeleteCart}
+                className="hover:opacity-75 transition-opacity"
+              >
                 <img src={deleteIcon} alt="deleteIcon" />
               </button>
             </div>
