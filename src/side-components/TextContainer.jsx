@@ -57,6 +57,7 @@ export default function TextContainer() {
         </div>
         {/* Add to Cart Button */}
         <button
+          onClick={() => handleAddToCart(count)}
           className="flex items-center justify-center gap-4  px-16 py-4 bg-custom-orange rounded-xl cursor-pointer
         hover:bg-custom-orange/75 transition-opacity shadow-xl"
         >

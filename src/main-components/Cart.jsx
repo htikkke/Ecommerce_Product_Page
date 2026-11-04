@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../App";
-import deleteIcon from "../assets/images/image-delete.png";
+import deleteIcon from "../assets/images/icon-delete.svg";
 
 export default function Cart() {
   const { cartItem, handleDeleteCart } = useContext(CartContext);
