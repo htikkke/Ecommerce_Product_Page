@@ -1,10 +1,12 @@
 import cartIcon from "../assets/images/icon-cart.svg";
 import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../App";
 
 export default function TextContainer() {
   const [count, setCount] = useState(0);
+  const { handleAddToCart } = useContext(CartContext);
 
   return (
     <div id="text-container" className="px-6 font-sans">
