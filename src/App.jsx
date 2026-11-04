@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import Nav from "./main-components/Nav";
 import Hero from "./main-components/Hero";
 
+const cartContext = createContext();
 export default function App() {
   const [cartItem, setCartItem] = useState(null);
 
@@ -19,12 +20,16 @@ export default function App() {
     setCartItem(null);
   };
   return (
-    <div
-      id="main-container"
-      className="w-full min-h-screen bg-white px-20 py-5"
+    <cartContext.Provider
+      value={{ handleAddToCart, handleDeleteCart, cartItem, setCartItem }}
     >
-      <Nav cartItem={cartItem} onDeleteCart={handleDeleteCart} />
-      <Hero />
-    </div>
+      <div
+        id="main-container"
+        className="w-full min-h-screen bg-white px-20 py-5"
+      >
+        <Nav />
+        <Hero />
+      </div>
+    </cartContext.Provider>
   );
 }
