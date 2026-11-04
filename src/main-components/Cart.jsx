@@ -3,7 +3,8 @@ import { CartContext } from "../App";
 import deleteIcon from "../assets/images/image-delete.png";
 
 export default function Cart() {
-  const { cartItem, handleAddToCart } = useContext(CartContext);
+  const { cartItem, handleAddToCart, handleDeleteCart } =
+    useContext(CartContext);
   return (
     <div
       id="cart-container"
@@ -17,20 +18,28 @@ export default function Cart() {
       <div className="p-6">
         {cartItem ? (
           <div id="item-container" className="flex flex-col gap-6">
-            <div>
-              <img src={cartItem.image} alt="Thumbnail" />
-              <div>
+            <div className="flex items-center justify-between gap-4">
+              <img
+                src={cartItem.image}
+                alt="Thumbnail"
+                className="w-14 h-14 rounded-md object-cover"
+              />
+              <div className="text-dark-grayish-blue text-sm">
                 <p>{cartItem.name}</p>
                 <p>
                   ${cartItem.price.toFixed(2)} x {cartItem.quantity}{" "}
-                  <strong>${cartItem.total.toFixed(2)}</strong>
+                  <strong className="text-very-dark-blue font-bold ml-1">
+                    ${cartItem.total.toFixed(2)}
+                  </strong>
                 </p>
               </div>
-              <button>
+              <button className="hover:opacity-75 transition-opacity">
                 <img src={deleteIcon} alt="deleteIcon" />
               </button>
             </div>
-            <button>Checkout</button>
+            <button className="w-full py-4 bg-custom-orange text-black font-bold rounded-xl hover:opacity-75 transition-opacity">
+              Checkout
+            </button>
           </div>
         ) : (
           <div
