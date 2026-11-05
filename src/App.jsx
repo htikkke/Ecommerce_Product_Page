@@ -5,6 +5,7 @@ import thumbnailImg from "./assets/images/image-product-1-thumbnail.jpg";
 
 export const CartContext = createContext();
 export default function App() {
+  const [count, setCount] = useState(0);
   const [cartItem, setCartItem] = useState(null);
 
   const handleAddToCart = (quantity) => {
@@ -22,7 +23,14 @@ export default function App() {
   };
   return (
     <CartContext.Provider
-      value={{ handleAddToCart, handleDeleteCart, cartItem, setCartItem }}
+      value={{
+        handleAddToCart,
+        handleDeleteCart,
+        cartItem,
+        setCartItem,
+        count,
+        setCount,
+      }}
     >
       <div
         id="main-container"
