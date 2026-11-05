@@ -1,4 +1,5 @@
 import cartIcon from "../assets/images/icon-cart.svg";
+import logo from "../assets/images/logo.svg";
 import profile from "../assets/images/image-avatar.png";
 import Cart from "./Cart";
 import { useState } from "react";
@@ -11,10 +12,8 @@ export default function Nav() {
       className="flex items-center justify-between py-8 border-b border-grayish-blue
        max-w-6xl mx-auto"
     >
-      <div className="flex items-center gap-14">
-        <h1 className="font-bold font-sans text-3xl text-black tracking-tight">
-          sneakers
-        </h1>
+      <div className="flex items-center gap-18">
+        <img src={logo} />
         <ul className="flex items-center gap-8">
           <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
             Collections
