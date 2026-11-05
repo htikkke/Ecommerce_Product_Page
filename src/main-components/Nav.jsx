@@ -24,7 +24,9 @@ export default function Nav() {
               key={index}
               className="relative group h-full flex items-center py-6  text-dark-grayish-blue font-medium font-sans cursor-pointer"
             >
-              <span>{item}</span>
+              <span className="hover:text-very-dark-blue transition-colors">
+                {item}
+              </span>
             </li>
           ))}
         </ul>
