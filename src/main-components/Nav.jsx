@@ -19,21 +19,14 @@ export default function Nav() {
       <div className="flex items-center gap-18">
         <img src={logo} />
         <ul className="flex items-center gap-8">
-          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
-            Collections
-          </li>
-          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
-            Men
-          </li>
-          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
-            Women
-          </li>
-          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
-            About
-          </li>
-          <li className="text-dark-grayish-blue text-sm font-sans cursor-pointer">
-            Contact
-          </li>
+          {menuItems.map((item, index) => (
+            <li
+              key={index}
+              className="relative group h-full flex items-center py-6  text-dark-grayish-blue font-medium font-sans cursor-pointer"
+            >
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="flex items-center gap-10">
