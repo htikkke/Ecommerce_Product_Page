@@ -8,6 +8,8 @@ import { CartContext } from "../App";
 export default function Nav() {
   const [CartOpen, setCartOpen] = useState(false);
   const { cartItem } = useContext(CartContext);
+  const menuItems = ["Collections", "Men", "Women", "About", "Contact"];
+
   return (
     <nav
       id="nav-bar"
