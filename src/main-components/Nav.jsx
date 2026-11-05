@@ -2,7 +2,8 @@ import cartIcon from "../assets/images/icon-cart.svg";
 import logo from "../assets/images/logo.svg";
 import profile from "../assets/images/image-avatar.png";
 import Cart from "./Cart";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../App";
 
 export default function Nav() {
   const [CartOpen, setCartOpen] = useState(false);
