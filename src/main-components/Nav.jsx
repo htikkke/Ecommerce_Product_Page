@@ -7,6 +7,7 @@ import { CartContext } from "../App";
 
 export default function Nav() {
   const [CartOpen, setCartOpen] = useState(false);
+  const { cartItem } = useContext(CartContext);
   return (
     <nav
       id="nav-bar"
@@ -39,6 +40,11 @@ export default function Nav() {
           className="cursor-pointer relative hover:opacity-75 transition-opacity"
         >
           <img src={cartIcon} alt="Cart" />
+          {cartItem && (
+            <span className="absolute -top-2 -right-3 bg-custom-orange text-white text-xs font-bold px-2 py-0.5 rounded-full">
+              {cartItem.quantity}
+            </span>
+          )}
         </div>
         <img
           src={profile}
