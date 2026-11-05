@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
 import Nav from "./main-components/Nav";
 import Hero from "./main-components/Hero";
+import thumbnailImg from "./assets/images/image-product-1-thumbnail.jpg";
 
 export const CartContext = createContext();
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
       price: 125.0,
       quantity: quantity,
       total: 125.0 * quantity,
-      image: "/image-product-1-thumbnail.jpg",
+      image: thumbnailImg,
     });
   };
   const handleDeleteCart = () => {
