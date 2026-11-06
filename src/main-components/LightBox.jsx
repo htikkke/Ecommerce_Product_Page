@@ -17,5 +17,11 @@ export default function LightBox() {
   const { isLightBoxOpen } = useContext(CartContext);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  if (!isLightBoxOpen) return null;
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
   return <div id="light-box-container"></div>;
 }
