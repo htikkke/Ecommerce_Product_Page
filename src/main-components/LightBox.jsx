@@ -23,5 +23,9 @@ export default function LightBox() {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return <div id="light-box-container"></div>;
 }
