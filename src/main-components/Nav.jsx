@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <nav
       id="nav-bar"
-      className="flex items-center justify-between py-8 border-b border-grayish-blue
+      className="relative flex items-center justify-between h-28 border-b border-grayish-blue
        max-w-6xl mx-auto"
     >
       <div className="flex items-center gap-18">
@@ -22,11 +22,12 @@ export default function Nav() {
           {menuItems.map((item, index) => (
             <li
               key={index}
-              className="relative group h-full flex items-center py-6  text-dark-grayish-blue font-medium font-sans cursor-pointer"
+              className="relative group h-full flex items-center text-dark-grayish-blue font-medium font-sans cursor-pointer"
             >
               <span className="hover:text-very-dark-blue transition-colors">
                 {item}
               </span>
+              <span className="absolute -bottom-11 left-0 w-full h-1 bg-custom-orange opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </li>
           ))}
         </ul>
