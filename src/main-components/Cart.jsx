@@ -3,7 +3,8 @@ import { CartContext } from "../App";
 import deleteIcon from "../assets/images/icon-delete.svg";
 
 export default function Cart() {
-  const { cartItem, handleDeleteCart, setCount } = useContext(CartContext);
+  const { cartItem, handleDeleteCart, setCount, setCartOpen } =
+    useContext(CartContext);
   return (
     <div
       id="cart-container"
@@ -43,7 +44,14 @@ export default function Cart() {
                 />
               </button>
             </div>
-            <button className="w-full py-4 bg-custom-orange text-black font-bold rounded-xl hover:opacity-75 transition-opacity">
+            <button
+              onClick={() => {
+                setCartOpen(false);
+                setCount(0);
+                handleDeleteCart();
+              }}
+              className="w-full py-4 bg-custom-orange text-black font-bold rounded-xl hover:opacity-75 transition-opacity cursor-pointer"
+            >
               Checkout
             </button>
           </div>
