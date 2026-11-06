@@ -7,7 +7,7 @@ export default function Cart() {
   return (
     <div
       id="cart-container"
-      className="absolute right-4 md:right-24 top-24 w-90 md:w-95 bg-white rounded-xl shadow-2xl z-50 font-sans"
+      className="absolute right-4 md:right-0 top-24 w-90 md:w-95 bg-white rounded-xl shadow-2xl z-50 font-sans"
     >
       {/* Cart-Header */}
       <div className="px-6 py-6 border-b border-grayish-blue">
@@ -36,7 +36,11 @@ export default function Cart() {
                 onClick={handleDeleteCart}
                 className="hover:opacity-75 transition-opacity"
               >
-                <img onClick={() => setCount(0)} src={deleteIcon} alt="deleteIcon" />
+                <img
+                  onClick={() => setCount(0)}
+                  src={deleteIcon}
+                  alt="deleteIcon"
+                />
               </button>
             </div>
             <button className="w-full py-4 bg-custom-orange text-black font-bold rounded-xl hover:opacity-75 transition-opacity">

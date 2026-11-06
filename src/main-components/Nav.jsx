@@ -2,12 +2,11 @@ import cartIcon from "../assets/images/icon-cart.svg";
 import logo from "../assets/images/logo.svg";
 import profile from "../assets/images/image-avatar.png";
 import Cart from "./Cart";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../App";
 
 export default function Nav() {
-  const [CartOpen, setCartOpen] = useState(false);
-  const { cartItem } = useContext(CartContext);
+  const { cartItem, CartOpen, setCartOpen } = useContext(CartContext);
   const menuItems = ["Collections", "Men", "Women", "About", "Contact"];
 
   return (
