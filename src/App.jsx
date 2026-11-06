@@ -8,6 +8,7 @@ export default function App() {
   const [count, setCount] = useState(0);
   const [cartItem, setCartItem] = useState(null);
   const [CartOpen, setCartOpen] = useState(false);
+  const [isLightBoxOpen, setIsLightOpen] = useState(false);
 
   const handleAddToCart = (quantity) => {
     if (quantity === 0) return;
@@ -33,6 +34,8 @@ export default function App() {
         setCount,
         CartOpen,
         setCartOpen,
+        isLightBoxOpen,
+        setIsLightOpen,
       }}
     >
       <div

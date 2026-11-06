@@ -1,3 +1,3 @@
 export default function LightBox() {
-  return <div></div>;
+  return <div id="light-box-container"></div>;
 }
