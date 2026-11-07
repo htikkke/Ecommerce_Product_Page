@@ -10,6 +10,10 @@ import thumb2 from "../assets/images/image-product-2-thumbnail.jpg";
 import thumb3 from "../assets/images/image-product-3-thumbnail.jpg";
 import thumb4 from "../assets/images/image-product-4-thumbnail.jpg";
 
+import closeIcon from "../assets/images/icon-close.svg";
+import nextIcon from "../assets/images/icon-next.svg";
+import previousIcon from "../assets/images/icon-previous.jpg";
+
 const images = [img1, img2, img3, img4];
 const thumbnails = [thumb1, thumb2, thumb3, thumb4];
 
