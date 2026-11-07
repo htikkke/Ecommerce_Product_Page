@@ -31,5 +31,23 @@ export default function LightBox() {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  return <div id="light-box-container"></div>;
+  return (
+    <div id="light-box-container">
+      <div>
+        <button>{closeIcon}</button>
+        <div>
+          <img src={images[currentIndex]} alt="product-zoomed" />
+          <button>{nextIcon}</button>
+          <button>{previousIcon}</button>
+        </div>
+        <div>
+          {thumbnails.map((thumb, index) => (
+            <div key={index}>
+              <img src={thumb} alt={`Thumbnail ${index}`} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
