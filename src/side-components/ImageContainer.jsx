@@ -4,17 +4,16 @@ import product3 from "../assets/images/image-product-3.jpg";
 import product4 from "../assets/images/image-product-4.jpg";
 import { useState, useContext } from "react";
 import { CartContext } from "../App";
-import LightBox from "../main-components/LightBox";
 
 export default function ImageContainer() {
   const [selectedProduct, setSelectedProduct] = useState(product1);
-  const { setIsLightOpen } = useContext(CartContext);
+  const { setIsLightBoxOpen } = useContext(CartContext);
   return (
     <div id="image-container" className="px-6">
       {/* Main-Large-Image */}
       <div>
         <img
-          onClick={() => setIsLightOpen(true)}
+          onClick={() => setIsLightBoxOpen(true)}
           src={selectedProduct}
           className="w-full rounded-2xl cursor-pointer"
           alt="Product Preview"

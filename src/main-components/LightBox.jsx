@@ -18,7 +18,7 @@ const images = [img1, img2, img3, img4];
 const thumbnails = [thumb1, thumb2, thumb3, thumb4];
 
 export default function LightBox() {
-  const { isLightBoxOpen } = useContext(CartContext);
+  const { isLightBoxOpen, setIsLightBoxOpen } = useContext(CartContext);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!isLightBoxOpen) return null;
@@ -32,18 +32,40 @@ export default function LightBox() {
   };
 
   return (
-    <div id="light-box-container">
-      <div>
-        <button>{closeIcon}</button>
+    <div
+      id="light-box-container"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+    >
+      <div className="relative max-w-lg w-full flex flex-col items-center">
+        <button className="self-end font-bold mb-4">
+          <img src={closeIcon} className="w-5 h-5 brightness-300" />
+        </button>
         <div>
-          <img src={images[currentIndex]} alt="product-zoomed" />
-          <button>{nextIcon}</button>
-          <button>{previousIcon}</button>
+          <div className="w-full aspect-square rounded-2xl overflow-hidden mb-6 shadow-2xl">
+            <img
+              src={images[currentIndex]}
+              alt="product-zoomed"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <button className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md z-20">
+            <img src={previousIcon} />
+          </button>
+          <button className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
+            <img src={nextIcon} />
+          </button>
         </div>
-        <div>
+        <div className="flex gap-6 justify-center">
           {thumbnails.map((thumb, index) => (
-            <div key={index}>
-              <img src={thumb} alt={`Thumbnail ${index}`} />
+            <div
+              key={index}
+              className="relative w-20 h-20 rounded-xl overflow-hidden cursor-pointer bg-white border-2 transition-all"
+            >
+              <img
+                src={thumb}
+                alt={`Thumbnail ${index}`}
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>

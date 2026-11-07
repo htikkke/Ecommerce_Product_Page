@@ -2,13 +2,14 @@ import { useState, createContext } from "react";
 import Nav from "./main-components/Nav";
 import Hero from "./main-components/Hero";
 import thumbnailImg from "./assets/images/image-product-1-thumbnail.jpg";
+import LightBox from "./main-components/LightBox";
 
 export const CartContext = createContext();
 export default function App() {
   const [count, setCount] = useState(0);
   const [cartItem, setCartItem] = useState(null);
   const [CartOpen, setCartOpen] = useState(false);
-  const [isLightBoxOpen, setIsLightOpen] = useState(false);
+  const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
 
   const handleAddToCart = (quantity) => {
     if (quantity === 0) return;
@@ -35,7 +36,7 @@ export default function App() {
         CartOpen,
         setCartOpen,
         isLightBoxOpen,
-        setIsLightOpen,
+        setIsLightBoxOpen,
       }}
     >
       <div
@@ -44,6 +45,7 @@ export default function App() {
       >
         <Nav />
         <Hero />
+        <LightBox />
       </div>
     </CartContext.Provider>
   );
