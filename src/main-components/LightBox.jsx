@@ -37,7 +37,10 @@ export default function LightBox() {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
     >
       <div className="relative max-w-lg w-full flex flex-col items-center">
-        <button className="self-end font-bold mb-4">
+        <button
+          onClick={() => setIsLightBoxOpen(false)}
+          className="self-end font-bold mb-4 cursor-pointer"
+        >
           <img src={closeIcon} className="w-5 h-5 brightness-300" />
         </button>
         <div>
