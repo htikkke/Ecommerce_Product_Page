@@ -39,9 +39,15 @@ export default function LightBox() {
       <div className="relative max-w-lg w-full flex flex-col items-center">
         <button
           onClick={() => setIsLightBoxOpen(false)}
-          className="self-end font-bold mb-4 cursor-pointer"
+          className="self-end mb-4 cursor-pointer group"
         >
-          <img src={closeIcon} className="w-5 h-5 brightness-300" />
+          <span
+            className="block w-5 h-5 bg-white group-hover:bg-custom-orange transition-colors duration-200"
+            style={{
+              WebkitMask: `url("${closeIcon}") center / contain no-repeat`,
+              mask: `url("${closeIcon}") center / contain no-repeat`,
+            }}
+          />
         </button>
         <div>
           <div className="w-full aspect-square rounded-2xl overflow-hidden mb-6 shadow-2xl">
