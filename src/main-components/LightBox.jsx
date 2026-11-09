@@ -59,6 +59,7 @@ export default function LightBox() {
             <img src={previousIcon} />
           </button>
           <button
+            onClick={handleNext}
             className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md
           cursor-pointer"
           >
