@@ -75,8 +75,11 @@ export default function LightBox() {
               <img
                 src={thumb}
                 alt={`Thumbnail ${index}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-all"
               />
+              {currentIndex === index && (
+                <div className="absolute inset-0 bg-white/70"></div>
+              )}
             </div>
           ))}
         </div>
