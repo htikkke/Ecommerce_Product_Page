@@ -73,9 +73,15 @@ export default function LightBox() {
           <button
             onClick={handleNext}
             className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md
-          cursor-pointer"
+          cursor-pointer group"
           >
-            <img src={nextIcon} />
+            <span
+              className="block w-5 h-5 bg-black group-hover:bg-custom-orange transition-colors duration-200"
+              style={{
+                WebkitMask: `url("${nextIcon}") center / contain no-repeat`,
+                mask: `url("${nextIcon}") center / contain no-repeat`,
+              }}
+            />
           </button>
         </div>
         <div className="flex gap-6 justify-center">
