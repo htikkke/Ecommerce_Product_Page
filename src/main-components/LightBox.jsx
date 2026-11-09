@@ -70,7 +70,7 @@ export default function LightBox() {
           {thumbnails.map((thumb, index) => (
             <div
               key={index}
-              className="relative w-20 h-20 rounded-xl overflow-hidden cursor-pointer bg-white border-2 transition-all"
+              className={`relative w-20 h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${currentIndex === index ? "border-custom-orange" : "border-transparent"} transition-all`}
             >
               <img
                 src={thumb}
