@@ -88,16 +88,16 @@ export default function LightBox() {
           {thumbnails.map((thumb, index) => (
             <div
               key={index}
-              className={`relative w-20 h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${currentIndex === index ? "border-custom-orange" : "border-transparent"} transition-all`}
+              className={`relative w-20 h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${currentIndex === index ? "border-custom-orange" : "border-transparent"} transition-all group`}
             >
               <img
                 src={thumb}
                 alt={`Thumbnail ${index}`}
                 className="w-full h-full object-cover transition-all"
               />
-              {currentIndex === index && (
-                <div className="absolute inset-0 bg-white/70"></div>
-              )}
+              <div
+                className={`${currentIndex === index ? "opacity-100" : "opacity-0 hover:opacity-100"} absolute inset-0 bg-white/70`}
+              ></div>
             </div>
           ))}
         </div>
