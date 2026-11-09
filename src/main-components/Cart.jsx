@@ -35,7 +35,7 @@ export default function Cart() {
               </div>
               <button
                 onClick={handleDeleteCart}
-                className="hover:opacity-75 transition-opacity"
+                className="hover:opacity-75 transition-opacity cursor-pointer"
               >
                 <img
                   onClick={() => setCount(0)}
