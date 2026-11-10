@@ -36,7 +36,7 @@ export default function LightBox() {
       id="light-box-container"
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
     >
-      <div className="relative max-w-lg w-full flex flex-col items-center">
+      <div className="relative max-w-lg w-full flex flex-col items-center px-4">
         <button
           onClick={() => setIsLightBoxOpen(false)}
           className="self-end mb-4 cursor-pointer group"
