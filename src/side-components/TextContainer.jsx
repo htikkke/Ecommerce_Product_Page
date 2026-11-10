@@ -58,7 +58,7 @@ export default function TextContainer() {
         <button
           onClick={() => handleAddToCart(count)}
           className="flex items-center justify-center gap-4  px-16 py-4 bg-custom-orange rounded-xl cursor-pointer
-        hover:bg-custom-orange/75 transition-opacity shadow-xl"
+        hover:bg-custom-orange/75 transition-opacity shadow-xl max-[1025px]:px-4"
         >
           <img src={cartIcon} alt="Cart Icon" className="brightness-0" />
           <span className="font-bold">Add to cart</span>
