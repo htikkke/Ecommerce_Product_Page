@@ -15,9 +15,9 @@ export default function Nav() {
       className="relative flex items-center justify-between h-28 border-b border-grayish-blue
        max-w-6xl mx-auto"
     >
-      <div className="flex items-center gap-18">
+      <div className="flex items-center gap-18 max-[770px]:gap-12">
         <img src={logo} />
-        <ul className="flex items-center gap-8">
+        <ul className="flex items-center gap-8 max-[770px]:gap-4">
           {menuItems.map((item, index) => (
             <li
               key={index}
@@ -31,7 +31,7 @@ export default function Nav() {
           ))}
         </ul>
       </div>
-      <div className="flex items-center gap-10">
+      <div className="flex items-center gap-10 max-[770px]:gap-5">
         <div
           onClick={() => setCartOpen(!CartOpen)}
           className="cursor-pointer relative hover:opacity-75 transition-opacity"
