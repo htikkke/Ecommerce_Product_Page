@@ -19,8 +19,8 @@ export default function ImageContainer() {
           alt="Product Preview"
         />
       </div>
-      {/* Thumbnail-Images */}
-      <div className="flex items-center justify-between w-full mt-4">
+      {/* Thumbnail-Images-for-desktop-design*/}
+      <div className="flex items-center justify-between w-full mt-4 max-[440px]:hidden">
         <div
           className={`relative w-20 h-20 rounded-xl cursor-pointer group border-2 overflow-hidden transition-all ${selectedProduct === product1 ? "border-custom-orange" : "border-transparent"}`}
         >
