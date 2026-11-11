@@ -41,7 +41,7 @@ export default function App() {
     >
       <div
         id="main-container"
-        className="w-full min-h-screen bg-white px-20 py-5 max-[770px]:px-10"
+        className="w-full min-h-screen bg-white px-20 py-5 max-[770px]:px-10 max-[440px]:px-5 max-[440px]:py-0 max-[440px]:mt-2"
       >
         <Nav />
         <Hero />

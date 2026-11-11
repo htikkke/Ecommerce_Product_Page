@@ -1,6 +1,7 @@
 import cartIcon from "../assets/images/icon-cart.svg";
 import logo from "../assets/images/logo.svg";
 import profile from "../assets/images/image-avatar.png";
+import mobileMenu from "../assets/images/icon-menu.svg";
 import Cart from "./Cart";
 import { useContext } from "react";
 import { CartContext } from "../App";
@@ -13,11 +14,15 @@ export default function Nav() {
     <nav
       id="nav-bar"
       className="relative flex items-center justify-between h-28 border-b border-grayish-blue
-       max-w-6xl mx-auto"
+       max-w-6xl mx-auto max-[440px]:border-b-transparent"
     >
-      <div className="flex items-center gap-18 max-[770px]:gap-12">
-        <img src={logo} />
-        <ul className="flex items-center gap-8 max-[770px]:gap-4">
+      <div className="flex items-center gap-18 max-[770px]:gap-12 max-[440px]:justify-between max-[440px]:gap-0">
+        <div className="flex items-center gap-5">
+          <img src={mobileMenu} className="hidden max-[440px]:block" />
+          <img src={logo} />
+        </div>
+        {/* nav-items */}
+        <ul className="flex items-center gap-8 max-[770px]:gap-6 max-[440px]:hidden">
           {menuItems.map((item, index) => (
             <li
               key={index}
