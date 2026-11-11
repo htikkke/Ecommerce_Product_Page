@@ -1,13 +1,17 @@
+import { useContext, useState } from "react";
+import { CartContext } from "../App";
+
 import cartIcon from "../assets/images/icon-cart.svg";
 import logo from "../assets/images/logo.svg";
 import profile from "../assets/images/image-avatar.png";
 import mobileMenu from "../assets/images/icon-menu.svg";
+
 import Cart from "./Cart";
-import { useContext } from "react";
-import { CartContext } from "../App";
+import MobileMenu from "../side-components/MobileMenu";
 
 export default function Nav() {
   const { cartItem, CartOpen, setCartOpen } = useContext(CartContext);
+  const [OpenMobileMenu, setOpenMobileMenu] = useState(false);
   const menuItems = ["Collections", "Men", "Women", "About", "Contact"];
 
   return (
@@ -18,7 +22,9 @@ export default function Nav() {
     >
       <div className="flex items-center gap-18 max-[770px]:gap-12 max-[440px]:justify-between max-[440px]:gap-0 max-[440px]:px-5">
         <div className="flex items-center gap-5">
-          <img src={mobileMenu} className="hidden max-[440px]:block" />
+          <button onClick={() => setOpenMobileMenu(!OpenMobileMenu)}>
+            <img src={mobileMenu} className="hidden max-[440px]:block" />
+          </button>
           <img src={logo} />
         </div>
         {/* nav-items */}
@@ -55,6 +61,7 @@ export default function Nav() {
         />
       </div>
       {CartOpen && <Cart />}
+      {OpenMobileMenu && <mobileMenu />}
     </nav>
   );
 }
