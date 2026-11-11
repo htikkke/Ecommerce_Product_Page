@@ -1,5 +1,6 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../App";
+
 import img1 from "../assets/images/image-product-1.jpg";
 import img2 from "../assets/images/image-product-2.jpg";
 import img3 from "../assets/images/image-product-3.jpg";
@@ -18,18 +19,15 @@ const images = [img1, img2, img3, img4];
 const thumbnails = [thumb1, thumb2, thumb3, thumb4];
 
 export default function LightBox() {
-  const { isLightBoxOpen, setIsLightBoxOpen } = useContext(CartContext);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const {
+    isLightBoxOpen,
+    setIsLightBoxOpen,
+    handleNext,
+    handlePrev,
+    currentIndex,
+  } = useContext(CartContext);
 
   if (!isLightBoxOpen) return null;
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
 
   return (
     <div
