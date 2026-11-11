@@ -8,7 +8,7 @@ export default function Cart() {
   return (
     <div
       id="cart-container"
-      className="absolute right-4 md:right-0 top-24 w-90 md:w-95 bg-white rounded-xl shadow-2xl z-50 font-sans"
+      className="absolute top-24 w-[92%] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 md:w-95 bg-white rounded-xl shadow-2xl z-50 font-sans"
     >
       {/* Cart-Header */}
       <div className="px-6 py-6 border-b border-grayish-blue">
