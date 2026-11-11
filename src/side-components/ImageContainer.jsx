@@ -9,13 +9,13 @@ export default function ImageContainer() {
   const [selectedProduct, setSelectedProduct] = useState(product1);
   const { setIsLightBoxOpen } = useContext(CartContext);
   return (
-    <div id="image-container" className="px-6">
+    <div id="image-container" className="px-6 max-[440px]:p-0">
       {/* Main-Large-Image */}
       <div>
         <img
           onClick={() => setIsLightBoxOpen(true)}
           src={selectedProduct}
-          className="w-full rounded-2xl cursor-pointer"
+          className="w-full rounded-2xl cursor-pointer max-[440px]:rounded-none"
           alt="Product Preview"
         />
       </div>
