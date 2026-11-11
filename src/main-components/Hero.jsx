@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="hero-section"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto py-12"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto py-12 max-[440px]:py-0"
     >
       <ImageContainer />
       <TextContainer />
