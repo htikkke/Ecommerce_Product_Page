@@ -8,7 +8,7 @@ export default function TextContainer() {
   const { handleAddToCart, count, setCount } = useContext(CartContext);
 
   return (
-    <div id="text-container" className="px-6 font-sans">
+    <div id="text-container" className="px-6 font-sans max-[440px]:mb-4">
       {/* Company Name */}
       <p className="text-dark-grayish-blue uppercase font-bold text-xs tracking-[2px]">
         Sneaker Company
@@ -26,7 +26,7 @@ export default function TextContainer() {
         weather can offer.
       </p>
       {/* Pricing Section */}
-      <div className="mt-6 flex flex-col gap-2">
+      <div className="mt-6 flex flex-col gap-2 max-[440px]:flex-row max-[440px]:items-center max-[440px]:justify-between max-[440px]:px-2">
         <div className="flex items-center gap-4">
           <p className="font-bold text-2xl text-very-dark-blue">$125.00</p>
           <span className="px-2 py-0.5 bg-black rounded-md text-white font-bold text-sm">
@@ -37,9 +37,9 @@ export default function TextContainer() {
           $250.00
         </p>
       </div>
-      <div className="flex items-center gap-8 mt-4">
+      <div className="flex items-center gap-8 mt-4 max-[440px]:flex-col">
         {/* Quantity Selector */}
-        <div className="flex items-center gap-12  px-4 py-3 bg-light-grayish-blue rounded-xl">
+        <div className="flex items-center gap-12  px-4 py-3 bg-light-grayish-blue rounded-xl max-[440px]:w-full max-[440px]:justify-evenly">
           <button
             onClick={() => setCount((prev) => Math.max(0, prev - 1))}
             className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50"
@@ -58,7 +58,7 @@ export default function TextContainer() {
         <button
           onClick={() => handleAddToCart(count)}
           className="flex items-center justify-center gap-4  px-16 py-4 bg-custom-orange rounded-xl cursor-pointer
-        hover:bg-custom-orange/75 transition-opacity shadow-xl max-[1025px]:px-4"
+        hover:bg-custom-orange/75 transition-opacity shadow-xl max-[1025px]:px-4 max-[440px]:w-full max-[440px]:shadow-2xl max-[440px]:shadow-custom-orange/50"
         >
           <img src={cartIcon} alt="Cart Icon" className="brightness-0" />
           <span className="font-bold">Add to cart</span>
