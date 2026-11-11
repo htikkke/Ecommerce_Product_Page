@@ -35,6 +35,7 @@ export default function LightBox() {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
     >
       <div className="relative max-w-lg w-full flex flex-col items-center px-4">
+        {/* close-icon */}
         <button
           onClick={() => setIsLightBoxOpen(false)}
           className="self-end mb-4 cursor-pointer group"
@@ -55,6 +56,7 @@ export default function LightBox() {
               className="w-full h-full object-cover"
             />
           </div>
+          {/* Prev-button */}
           <button
             onClick={handlePrev}
             className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md z-20
@@ -68,6 +70,7 @@ export default function LightBox() {
               }}
             />
           </button>
+          {/* Next-button */}
           <button
             onClick={handleNext}
             className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md
