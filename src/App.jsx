@@ -18,6 +18,7 @@ export default function App() {
   const [CartOpen, setCartOpen] = useState(false);
   const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [OpenMobileMenu, setOpenMobileMenu] = useState(false);
 
   const handleAddToCart = (quantity) => {
     if (quantity === 0) return;
@@ -56,6 +57,8 @@ export default function App() {
         setCurrentIndex,
         handleNext,
         handlePrev,
+        OpenMobileMenu,
+        setOpenMobileMenu,
       }}
     >
       <div

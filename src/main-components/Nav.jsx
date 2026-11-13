@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../App";
 
 import cartIcon from "../assets/images/icon-cart.svg";
@@ -10,8 +10,8 @@ import Cart from "./Cart";
 import MobileMenu from "../side-components/MobileMenu";
 
 export default function Nav() {
-  const { cartItem, CartOpen, setCartOpen } = useContext(CartContext);
-  const [OpenMobileMenu, setOpenMobileMenu] = useState(false);
+  const { cartItem, CartOpen, setCartOpen, OpenMobileMenu, setOpenMobileMenu } =
+    useContext(CartContext);
   const menuItems = ["Collections", "Men", "Women", "About", "Contact"];
 
   return (
