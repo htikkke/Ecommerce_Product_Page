@@ -23,7 +23,11 @@ export default function Nav() {
       <div className="flex items-center gap-18 max-[770px]:gap-12 max-[440px]:justify-between max-[440px]:gap-0 max-[440px]:px-5">
         <div className="flex items-center gap-5">
           <button onClick={() => setOpenMobileMenu(!OpenMobileMenu)}>
-            <img src={mobileMenu} className="hidden max-[440px]:block" />
+            <img
+              src={mobileMenu}
+              className="hidden max-[440px]:block"
+              alt="menu-icon"
+            />
           </button>
           <img src={logo} />
         </div>
@@ -61,7 +65,7 @@ export default function Nav() {
         />
       </div>
       {CartOpen && <Cart />}
-      {OpenMobileMenu && <mobileMenu />}
+      {OpenMobileMenu && <MobileMenu />}
     </nav>
   );
 }
