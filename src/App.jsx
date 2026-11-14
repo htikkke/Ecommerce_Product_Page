@@ -15,10 +15,10 @@ export const CartContext = createContext();
 export default function App() {
   const [count, setCount] = useState(0);
   const [cartItem, setCartItem] = useState(null);
-  const [CartOpen, setCartOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [OpenMobileMenu, setOpenMobileMenu] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
   const handleAddToCart = (quantity) => {
     if (quantity === 0) return;
@@ -49,7 +49,7 @@ export default function App() {
         setCartItem,
         count,
         setCount,
-        CartOpen,
+        cartOpen,
         setCartOpen,
         isLightBoxOpen,
         setIsLightBoxOpen,
@@ -57,7 +57,7 @@ export default function App() {
         setCurrentIndex,
         handleNext,
         handlePrev,
-        OpenMobileMenu,
+        openMobileMenu,
         setOpenMobileMenu,
       }}
     >
