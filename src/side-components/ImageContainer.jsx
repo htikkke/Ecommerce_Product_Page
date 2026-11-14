@@ -30,13 +30,20 @@ export default function ImageContainer() {
       <div className="relative">
         <img
           onClick={() => setIsLightBoxOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") setIsLightBoxOpen(true);
+          }}
+          tabIndex={0}
+          role="button"
+          aria-label="Open image lightbox gallery"
           src={images[currentIndex]}
-          className="w-full rounded-2xl cursor-pointer max-[440px]:rounded-none"
-          alt="Product Preview"
+          className="w-full rounded-2xl cursor-pointer max-[440px]:rounded-none focus:outline-none focus:ring-2 focus:ring-custom-orange"
+          alt={`Product view ${currentIndex + 1}`}
         />
         {/* Prev-button */}
         <button
           onClick={handlePrev}
+          aria-label="Previous image"
           className="hidden absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full  items-center justify-center shadow-md z-20
                   cursor-pointer group max-[440px]:flex"
         >
@@ -51,6 +58,7 @@ export default function ImageContainer() {
         {/* Next-button */}
         <button
           onClick={handleNext}
+          aria-label="Next image"
           className="hidden absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full items-center justify-center shadow-md
                   cursor-pointer group max-[440px]:flex"
         >
@@ -69,6 +77,7 @@ export default function ImageContainer() {
           <div
             key={index}
             onClick={() => setCurrentIndex(index)}
+            aria-label={`View product image ${index + 1}`}
             className={`relative w-20 h-20 rounded-xl cursor-pointer group border-2 overflow-hidden transition-all ${
               currentIndex === index
                 ? "border-custom-orange"
@@ -77,7 +86,7 @@ export default function ImageContainer() {
           >
             <img
               src={thumb}
-              alt={`Thumbnail ${index}`}
+              alt=""
               className="w-full h-full object-cover transition-opacity"
             />
             <div
