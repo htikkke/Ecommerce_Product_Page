@@ -37,30 +37,42 @@ export default function TextContainer() {
           $250.00
         </p>
       </div>
+      {/* Actions */}
       <div className="flex items-center gap-8 mt-4 max-[440px]:flex-col">
         {/* Quantity Selector */}
-        <div className="flex items-center gap-12  px-4 py-3 bg-light-grayish-blue rounded-xl max-[440px]:w-full max-[440px]:justify-evenly">
+        <div
+          role="group"
+          aria-label="Product quantity"
+          className="flex items-center gap-12  px-4 py-3 bg-light-grayish-blue rounded-xl max-[440px]:w-full max-[440px]:justify-evenly"
+        >
           <button
+            type="button"
             onClick={() => setCount((prev) => Math.max(0, prev - 1))}
+            aria-label="Decrease quantity"
             className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50"
           >
-            <img src={minusIcon} />
+            <img src={minusIcon} alt="" />
           </button>
-          <p className="font-bold text-very-dark-blue">{count}</p>
+          <p aria-live="polite" className="font-bold text-very-dark-blue">
+            {count}
+          </p>
           <button
+            type="button"
+            aria-label="Increase quantity"
             onClick={() => setCount((prev) => prev + 1)}
             className="text-custom-orange font-bold text-2xl cursor-pointer hover:opacity-50"
           >
-            <img src={plusIcon} />
+            <img src={plusIcon} alt="" />
           </button>
         </div>
         {/* Add to Cart Button */}
         <button
+          type="button"
           onClick={() => handleAddToCart(count)}
           className="flex items-center justify-center gap-4  px-16 py-4 bg-custom-orange rounded-xl cursor-pointer
         hover:bg-custom-orange/75 transition-opacity shadow-xl max-[1025px]:px-4 max-[440px]:w-full max-[440px]:shadow-2xl max-[440px]:shadow-custom-orange/50"
         >
-          <img src={cartIcon} alt="Cart Icon" className="brightness-0" />
+          <img src={cartIcon} alt=" " className="brightness-0" />
           <span className="font-bold">Add to cart</span>
         </button>
       </div>
