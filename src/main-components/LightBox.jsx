@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { CartContext } from "../App";
 
 import img1 from "../assets/images/image-product-1.jpg";
@@ -27,17 +27,43 @@ export default function LightBox() {
     currentIndex,
   } = useContext(CartContext);
 
+  const closeButtonRef = useRef(null);
+
+  useEffect(() => {
+    if (!isLightBoxOpen) return;
+
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setIsLightBoxOpen(false);
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft") handlePrev();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isLightBoxOpen, setIsLightBoxOpen, handleNext, handlePrev]);
+
   if (!isLightBoxOpen) return null;
 
   return (
     <div
       id="light-box-container"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Product image gallery"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) setIsLightBoxOpen(false);
+      }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
     >
       <div className="relative max-w-lg w-full flex flex-col items-center px-4">
         {/* close-icon */}
         <button
+          ref={closeButtonRef}
+          type="button"
           onClick={() => setIsLightBoxOpen(false)}
+          aria-label="Close lightbox"
           className="self-end mb-4 cursor-pointer group"
         >
           <span
@@ -48,17 +74,20 @@ export default function LightBox() {
             }}
           />
         </button>
-        <div>
+        {/* Main Image + Prev/Next Wrapper */}
+        <div className="relative w-full mb-6">
           <div className="w-full aspect-square rounded-2xl overflow-hidden mb-6 shadow-2xl">
             <img
               src={images[currentIndex]}
-              alt="product-zoomed"
+              alt={`Product view ${currentIndex + 1} of ${images.length}`}
               className="w-full h-full object-cover"
             />
           </div>
           {/* Prev-button */}
           <button
+            type="button"
             onClick={handlePrev}
+            aria-label="Previous image"
             className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md z-20
           cursor-pointer group"
           >
@@ -72,6 +101,8 @@ export default function LightBox() {
           </button>
           {/* Next-button */}
           <button
+            type="button"
+            aria-label="Next image"
             onClick={handleNext}
             className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md
           cursor-pointer group"
@@ -85,15 +116,19 @@ export default function LightBox() {
             />
           </button>
         </div>
+        {/* Thumbnails */}
         <div className="flex gap-6 justify-center">
           {thumbnails.map((thumb, index) => (
             <div
               key={index}
+              type="button"
+              aria-label={`View product image ${index + 1}`}
+              aria-current={currentIndex === index ? "true" : undefined}
               className={`relative w-20 h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${currentIndex === index ? "border-custom-orange" : "border-transparent"} transition-all group`}
             >
               <img
                 src={thumb}
-                alt={`Thumbnail ${index}`}
+                alt=""
                 className="w-full h-full object-cover transition-all"
               />
               <div
