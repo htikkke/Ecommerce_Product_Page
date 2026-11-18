@@ -1,16 +1,31 @@
-# React + Vite
+# E-Commerce Product Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, accessible e-commerce product page built with React, Tailwind CSS, and Vite. This project focuses on clean UI design, interactive cart management, a lightbox image gallery, and full keyboard/screen-reader accessibility.
 
-Currently, two official plugins are available:
+## 🔗 Links
+- **Repository:** [https://github.com/htikkke/Ecommerce_Product_Page.git]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Responsive Design:** Adapts seamlessly across desktop, tablet, and mobile viewports (including a slide-out mobile navigation drawer).
+- **Interactive Image Gallery & Lightbox:** Switch between product thumbnails, use carousel controls on mobile, or open the full-screen lightbox modal on desktop.
+- **Shopping Cart State Management:** Adjust product quantities, add items to the cart, view dynamic total calculations, and remove items.
+- **Accessibility (a11y) First:**
+  - Full keyboard navigation (`Escape` to close modals/menus, `ArrowLeft`/`ArrowRight` to browse lightbox images).
+  - Clear `focus-visible` outlines for keyboard users.
+  - Semantic HTML, `ARIA` attributes (`aria-label`, `aria-live`, `aria-modal`, `aria-current`), and screen-reader-only context for pricing.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Built With
 
-## Expanding the ESLint configuration
+- **React** (Hooks & Context API)
+- **Tailwind CSS**
+- **Vite**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+To run this project locally on your machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone <https://github.com/htikkke/Ecommerce_Product_Page.git>
+   ```
