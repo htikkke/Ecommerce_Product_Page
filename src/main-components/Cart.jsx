@@ -1,18 +1,32 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../App";
 import deleteIcon from "../assets/images/icon-delete.svg";
 
 export default function Cart() {
   const { cartItem, handleDeleteCart, setCount, setCartOpen } =
     useContext(CartContext);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setCartOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [setCartOpen]);
   return (
     <div
       id="cart-container"
+      role="region"
+      aria-labelledby="cart-heading"
       className="absolute top-24 w-[92%] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 md:w-95 bg-white rounded-xl shadow-2xl z-50 font-sans"
     >
       {/* Cart-Header */}
       <div className="px-6 py-6 border-b border-grayish-blue">
-        <h2 className="font-bold text-lg text-very-dark-blue">Cart</h2>
+        <h2 id="cart-heading" className="font-bold text-lg text-very-dark-blue">
+          Cart
+        </h2>
       </div>
       {/* Cart-body */}
       <div className="p-6">
@@ -21,7 +35,7 @@ export default function Cart() {
             <div className="flex items-center justify-between gap-4">
               <img
                 src={cartItem.image}
-                alt="Thumbnail"
+                alt={cartItem.name}
                 className="w-14 h-14 rounded-md object-cover"
               />
               <div className="text-dark-grayish-blue text-sm">
@@ -34,14 +48,12 @@ export default function Cart() {
                 </p>
               </div>
               <button
+                type="button"
                 onClick={handleDeleteCart}
+                aria-label={`Remove ${cartItem.name} from cart`}
                 className="hover:opacity-75 transition-opacity cursor-pointer"
               >
-                <img
-                  onClick={() => setCount(0)}
-                  src={deleteIcon}
-                  alt="deleteIcon"
-                />
+                <img onClick={() => setCount(0)} src={deleteIcon} alt=" " />
               </button>
             </div>
             <button
@@ -58,6 +70,7 @@ export default function Cart() {
         ) : (
           <div
             id="empty-state-container"
+            aria-live="polite"
             className="flex items-center justify-center h-52 px-6"
           >
             <p className="text-dark-grayish-blue font-bold text-sm tracking-wide">
