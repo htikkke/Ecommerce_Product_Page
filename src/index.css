@@ -1,8 +1,8 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import "tailwindcss";
 
 @theme {
-  --font-custom-sans: "Kumbh Sans", sans-serif;
+  --font-sans: "Kumbh Sans", sans-serif;
   /* Primary-colors */
   --color-custom-orange: hsl(26, 100%, 55%);
   --color-custom-pale-orange: hsl(25, 100%, 94%);
