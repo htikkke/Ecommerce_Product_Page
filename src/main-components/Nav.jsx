@@ -19,9 +19,9 @@ export default function Nav() {
       id="nav-bar"
       aria-label="Main-Navigation"
       className="relative flex items-center justify-between h-28 border-b border-grayish-blue
-       max-w-6xl mx-auto max-[440px]:border-b-transparent max-[440px]:px-5 max-[440px]:h-20"
+       max-w-6xl mx-auto max-md:border-b-transparent max-md:px-5 max-md:h-20"
     >
-      <div className="flex items-center gap-18 max-[770px]:gap-12 max-[440px]:justify-between max-[440px]:gap-0 max-[440px]:px-5">
+      <div className="flex items-center gap-18 max-[770px]:gap-12 max-md:justify-between max-md:gap-0 max-md:px-5">
         <div className="flex items-center gap-5">
           <button
             onClick={() => setOpenMobileMenu(!openMobileMenu)}
@@ -29,7 +29,7 @@ export default function Nav() {
             aria-label={
               openMobileMenu ? "Close mobile menu" : "Open mobile menu"
             }
-            className="hidden max-[440px]:block focus:outline-none focus:ring-2 focus:ring-custom-orange rounded p-1"
+            className="hidden max-md:block focus:outline-none focus:ring-2 focus:ring-custom-orange rounded p-1"
           >
             <img
               src={mobileMenu}
@@ -46,7 +46,7 @@ export default function Nav() {
           </a>
         </div>
         {/* Desktop-Nav-items */}
-        <ul className="flex items-center gap-8 max-[770px]:gap-6 max-[440px]:hidden">
+        <ul className="flex items-center gap-8 max-[770px]:gap-6 max-md:hidden">
           {menuItems.map((item, index) => (
             <li
               key={index}
@@ -64,7 +64,7 @@ export default function Nav() {
         </ul>
       </div>
 
-      <div className="flex items-center gap-10 max-[770px]:gap-5 max-[440px]:px-5">
+      <div className="flex items-center gap-10 max-[770px]:gap-5 max-md:px-5">
         <button
           onClick={() => setCartOpen(!cartOpen)}
           aria-expanded={cartOpen}
